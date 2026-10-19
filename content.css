@@ -1,0 +1,40 @@
+/* Dark mode: invert the whole page, then rotate colors back so hues stay natural */
+html.gd-dark {
+    filter: invert(1) hue-rotate(180deg);
+    background: #fff; /* becomes near-black after inversion */
+  }
+  
+  /* Images and videos get inverted a second time so they look normal */
+  html.gd-dark img,
+  html.gd-dark video,
+  html.gd-dark picture,
+  html.gd-dark canvas,
+  html.gd-dark [style*="background-image"] {
+    filter: invert(1) hue-rotate(180deg);
+  }
+  
+  /* The toggle button */
+  #gd-dark-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 2147483647;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: #0caa41;
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+  }
+  
+  #gd-dark-toggle:hover { transform: scale(1.1); }
+  #gd-dark-toggle:focus-visible { outline: 3px solid #1861bf; outline-offset: 2px; }
+  
+  /* Keep the button looking normal while dark mode is on */
+  html.gd-dark #gd-dark-toggle {
+    filter: invert(1) hue-rotate(180deg);
+  }

@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "Glassdoor Dark Mode",
+    "version": "1.0",
+    "description": "Adds a dark mode toggle to Glassdoor. Unofficial, not affiliated with Glassdoor.",
+    "permissions": ["storage"],
+    "content_scripts": [
+      {
+        "matches": [
+          "https://*.glassdoor.com/*",
+          "https://*.glassdoor.co.in/*",
+          "https://*.glassdoor.co.uk/*"
+        ],
+        "css": ["content.css"],
+        "js": ["content.js"],
+        "run_at": "document_start"
+      }
+    ]
+  }
